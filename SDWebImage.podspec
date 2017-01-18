@@ -38,13 +38,13 @@ Pod::Spec.new do |s|
     mk.tvos.deployment_target = '9.0'
     mk.source_files = 'SDWebImage/MKAnnotationView+WebCache.*'
     mk.framework = 'MapKit'
-    mk.dependency 'SDWebImage/Core'
+    mk.dependency 'RHSDWebImage/Core'
   end
 
   s.subspec 'GIF' do |gif|
     gif.ios.deployment_target = '7.0'
     gif.source_files = 'SDWebImage/FLAnimatedImage/*.{h,m}'
-    gif.dependency 'SDWebImage/Core'
+    gif.dependency 'RHSDWebImage/Core'
     gif.dependency 'FLAnimatedImage', '~> 1.0'
     gif.xcconfig = {
       'USER_HEADER_SEARCH_PATHS' => '$(inherited) $(SRCROOT)/FLAnimatedImage/FLAnimatedImage'
@@ -61,7 +61,7 @@ Pod::Spec.new do |s|
       'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) SD_WEBP=1 WEBP_USE_INTRINSICS=1',
       'USER_HEADER_SEARCH_PATHS' => '$(inherited) $(SRCROOT)/libwebp/src'
     }
-    webp.dependency 'SDWebImage/Core'
+    webp.dependency 'RHSDWebImage/Core'
     webp.dependency 'libwebp'
   end
 end
