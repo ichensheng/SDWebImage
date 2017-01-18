@@ -40,8 +40,7 @@
         
         CGImageRef CGImage = CGImageSourceCreateImageAtIndex(source, 0, NULL);
 #if SD_UIKIT || SD_WATCH
-        UIImage *frameImage = [UIImage imageWithCGImage:CGImage scale:scale orientation:UIImageOrientationUp];
-        staticImage = [UIImage animatedImageWithImages:@[frameImage] duration:0.0f];
+        staticImage = [UIImage imageWithCGImage:CGImage scale:scale orientation:UIImageOrientationUp];
 #elif SD_MAC
         staticImage = [[UIImage alloc] initWithCGImage:CGImage size:NSZeroSize];
 #endif
